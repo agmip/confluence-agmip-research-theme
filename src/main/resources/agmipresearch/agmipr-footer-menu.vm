@@ -1,0 +1,47 @@
+<div>
+#set($lm = $action.getLabelManager())
+</div>
+<div id="agmipr-spacesmenu">
+    <div id="agmip-team" class="col">
+        <h2>AgMIP Teams</h2>
+        #renderSpacesLabelMenu("core-team")
+    </div>
+    <div id="xcutting-themes" class="col">
+        <h2>Cross-Cutting Themes</h2>
+        #renderSpacesLabelMenu("cross-cutting-theme")
+    </div>
+
+    <div id="model-comparisons" class="col">
+        <h2>Model Comparisons</h2>
+        #renderSpacesLabelMenu("model-comparison")
+    </div>
+    <div id="regional-groups" class="col">
+        <h2>Regional Groups</h2>
+        <ul>
+            <li><strong>South Asia</strong>
+                <ul>
+                    <li>Something</li>
+                    <li><a href="#">AgMIP in Sri Lanka</a></li>
+                </ul>
+            </li>
+            <li><strong>Sub-Sahara Africa</strong>
+                <ul>
+                    <li><a href="#">Some group</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <br class="clear">
+</div>
+
+#macro(renderSpacesLabelMenu $label)
+    #if($lm.getLabel("team:$label") != null)
+        #set( $lbl = $lm.getLabel("team:$label"))
+    #end
+    #set($spaces = $lm.getSpacesWithLabel($lbl))
+    <ul>
+    #foreach($space in $spaces)
+        <li><a href="$req.ContextPath$space.getUrlPath()">$space.getDisplayTitle()</a></li>
+    #end
+    </ul>
+#end

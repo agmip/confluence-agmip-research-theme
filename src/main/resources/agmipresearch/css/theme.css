@@ -1,0 +1,223 @@
+/*********************
+  THEME COLORS:
+  Grey:     #1a1d1e;
+  Lt. Blue: #eef6ff;
+  Green:    #3bb96e;
+  Cream:    #ece7cb;
+*********************/
+
+body {
+    /* background-color: #1a1d1e; */
+    background-color: #eef6ff;
+    font-family: Arial, "MS Trebuchet", sans-serif;
+    font-size: 12px;
+    color: #1a1d1e;
+}
+
+#main-header h1,#main-header h2,#main-header h3,#main-header h4,#main-header h5, #main-header h6 {
+    font-size: 36px;
+    margin-left: -5px;
+    margin-bottom: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Belgrano', serif;
+    margin-bottom: 5px;
+}
+
+h1, h2, h3, h4, h5, h6, .wiki-content h1, .wiki-content h2, .wiki-content h3, .wiki-content h4, .wiki-content h5, .wiki-content h6, .pagetitle, .steptitle, .substeptitle, .formtitle, table.confluenceTable td.confluenceTd.highlight, table.confluenceTable td.confluenceTd.highlight > p, table.confluenceTable th.confluenceTh, table.confluenceTable th.confluenceTh > p, table.admin th {
+    color: #3bb96e; !important
+}
+
+/* body, p, td, table, tr, .bodytext, .stepfield {
+    color: #e2f6ff; !important
+} */
+
+h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
+    color: #3bb96e;
+}
+
+.wiki-content, .wiki-content p, .wiki-content table, .wiki-content tr, .wiki-content td, .wiki-content th, .wiki-content ol, .wiki-content ul, .wiki-content li {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#header {
+    position: relative;
+    background-color: #ece7cb;
+    height: 100px;
+    font-family: 'Belgrano', serif;
+    color: #1a1d1e;
+    border-bottom: 3px solid #1a1d1e;
+}
+
+#header a {
+    color: #1a1d1e;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/*
+#footer {
+    margin-top: 25px;
+    border-bottom: 1px solid #bbb;
+} */
+
+#footer p.license {
+    margin-top: 0;
+    border-top: 0;
+    background-color: #1a1d1e;
+    color: #bbb;
+}
+
+#footer, #footer a {
+    background-color: #1a1d1e;
+    color: #eef6ff;
+}
+
+
+#agmipr-user-buttons {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+#agmipr-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 100px;
+    background: url("agmip-research-logo.png");
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#agmipr-breadcrumbs {
+    background-color: #1a1d1e;
+    margin-top:0;
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #eef6ff;
+    position: relative;
+}
+
+#agmipr-breadcrumbs a {
+    color: #eef6ff;
+}
+
+#agmipr-adminlinks {
+    position: absolute;
+    top:0;
+    right: 15px;
+    padding-top: 5px;
+}
+
+#agmipr-adminlinks a {
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+#main {
+    position: relative;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    background-color: inherit; /* #1a1d1e; */
+    clear: both;
+}
+
+#agmipr-spacesmenu {
+    background-color: #d3effa;
+    color: #1a1d1e;
+    border-top: 1px solid #1a1d1e;
+    border-bottom: 1px solid #1a1d1e;
+    padding-top: 0;
+    padding-left: 25px;
+    padding-bottom: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+#agmipr-spacesmenu a {
+    color: #1a1d1e;
+    text-decoration: none;
+}
+
+#agmipr-spacesmenu div.col {
+    margin-top:0;
+    float: left;
+    width: 225px;
+}
+
+#agmipr-spacesmenu ul {
+    list-style: none;
+    padding-left: 0;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+#agmipr-spacesmenu li {
+    margin-bottom: 7px;
+}
+
+#agmipr-spacesmenu li ul {
+    margin-left: 15px;
+}
+
+#agmipr-spacesmenu div#agmip-team {
+    width: 175px;
+}
+
+#agmipr-spacesmenu div#xcutting-themes {
+    width: 250px;
+}
+
+#agmipr-search {
+    position: relative;
+}
+
+#quick-search {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+#content-editable-container {
+    border: 0;
+}
+
+.contenteditor #agmipr-breadcrumbs {
+    display: none;
+}
+
+.agmipr-button {
+    background-color: #3bb96e;
+    color: #1a1d1e;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    border: 1px solid transparent;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px
+    border-radius: 2px;
+    outline: 0;
+}
+
+.agmipr-button:hover {
+    border: 1px solid black;
+}
+
+.clear {
+    clear: both;
+}
+
+.page-metadata {
+    margin-bottom: 25px;
+}
