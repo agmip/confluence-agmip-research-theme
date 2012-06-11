@@ -17,31 +17,21 @@
     </div>
     <div id="regional-groups" class="col">
         <h2>Regional Groups</h2>
-        <ul>
-            <li><strong>South Asia</strong>
-                <ul>
-                    <li>Something</li>
-                    <li><a href="#">AgMIP in Sri Lanka</a></li>
-                </ul>
-            </li>
-            <li><strong>Sub-Sahara Africa</strong>
-                <ul>
-                    <li><a href="#">Some group</a></li>
-                </ul>
-            </li>
-        </ul>
+        #renderSpacesLabelMenu("regional-groups")
     </div>
     <br class="clear">
 </div>
 
 #macro(renderSpacesLabelMenu $label)
-    #if($lm.getLabel("team:$label") != null)
-        #set( $lbl = $lm.getLabel("team:$label"))
-    #end
-    #set($spaces = $lm.getSpacesWithLabel($lbl))
     <ul>
-    #foreach($space in $spaces)
-        <li><a href="$req.ContextPath$space.getUrlPath()">$space.getDisplayTitle()</a></li>
+    #if($lm.getLabel("team:$label"))
+        #set( $lbl = $lm.getLabel("team:$label"))
+        #set($spaces = $lm.getSpacesWithLabel($lbl))
+            #foreach($space in $spaces)
+                <li><a href="$req.ContextPath$space.getUrlPath()">$space.getDisplayTitle()</a></li>
+            #end
+    #else
+        <li>No groups found</li>
     #end
     </ul>
 #end

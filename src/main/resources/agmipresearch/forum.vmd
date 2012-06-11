@@ -1,0 +1,82 @@
+#set ($spaceKey = $sitemeshPage.getProperty("page.spacename"))
+#set ($pageURL = $req.ServletPath+$req.PathInfo)
+<!DOCTYPE html>
+<html>
+    <head>
+        #if ($sitemeshPage.getProperty("page.spacename"))
+        <title>$title - $sitemeshPage.getProperty("page.spacename") - #siteTitle()</title>
+        #else
+        <title>$title - #siteTitle()</title>
+        #end
+        <link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
+        #requireResourcesForContext("main")
+        #standardHeader()
+
+        $!settingsManager.globalSettings.customHtmlSettings.beforeHeadEnd
+    </head>
+    ## HTML HEADER ENDS
+
+    ## HTML BODY BEGINS
+    <body #onLoadAttr() id="com-atlassian-confluence" class="$!theme.moduleKey $!sitemeshPage.getProperty("page.bodyClass")>
+        <div id="page">
+            <div id="full-height-container">
+                <div id="header">
+                    <h1 id="agmipr-logo">AgMIP Research</h1>
+                    <div id="agmipr-user-buttons">
+                        <a href="$helper.domainName">Home</a> 
+                        #if($user)
+                        <a href="$req.contextPath/logout.action" class="agmipr-button">Logout</a>
+                        #else                
+                        <a href="$req.contextPath/login.action?os_destination=$generalUtil.urlEncode($pageURL)" class="agmipr-button">Login</a>
+                        <a href="$req.contextPath/signup.action" class="agmipr-button">Sign Up</a>
+                        #end
+                    </div>
+                </div>
+                <div id="agmipr-breadcrumbs">
+                    #set( $space = $spaceManager.getSpace($spaceKey) )
+                    #set( $parentKey = $space.getKey().substring(0, $space.getKey().indexOf("forum")))
+                    #set( $parentSpace = $spaceManager.getSpace($parentKey))
+                    #set( $parentHome = $parentSpace.getHomePage())
+                    #set( $spaceHome = $space.getHomePage() )
+                    #if( $spaceHome.getId() != $sitemeshPage.getProperty("page.pageId"))
+                        <a href="$req.ContextPath$spaceHome.getUrlPath()">&laquo; Back To $spaceHome.Title</a>
+                    #else
+                    <a href="$req.ContextPath$parentHome.getUrlPath()">$parentSpace.getName()</a> > $sitemeshPage.getProperty("page.pageTitle")
+                    #end
+                    #if($user)
+                    <div id="agmipr-adminlinks">
+                        #if ($user.fullName)
+                        #set ($userDisplayName = $user.fullName)
+                        #else
+                        #set ($userDisplayName = $user.name)
+                        #end
+                        <a href="$req.ContextPath/users/viewmyprofile.action">$userDisplayName</a>
+                        #if( $permissionHelper.canAdminister($user, $spaceManager.getSpace($spaceKey)))
+                        <a href="$req.ContextPath/spaces/spaceadmin.action?key=$spaceKey">Space Admin</a>
+                        #end
+                        #if( $permissionHelper.isConfluenceAdministrator($user))
+                        <a href="$req.ContextPath/admin/console.action">Confluence Admin</a>
+                        <a href="$req.ContextPath/spaces/createspace-start.action">Create New Space</a>
+                        #end
+                    </div>
+                    #end
+                </div>
+            </div>
+            <div id="agmipr-search">
+                #quickSearch()
+            </div>
+            <div id="main">
+                <div id="main-header">
+                                    #if( $permissionHelper.canAdminister($user, $spaceManager.getSpace($spaceKey)))
+                        $!sitemeshPage.getProperty("page.content-navigation")
+                    #end
+                    <h1>#pageTitleLink()</h1>
+                </div>
+                $!sitemeshPage.getProperty("page.tab-navigation")
+                $body
+            </div>
+            #parse("/decorators/includes/footer.vm")
+        </div>
+    </div>
+</body>
+</html>

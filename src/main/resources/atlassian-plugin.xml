@@ -6,13 +6,22 @@
     </plugin-info>
 
     <theme key="agmipresearchmain" name="AgMIP Research Pages Theme" class="com.atlassian.confluence.themes.BasicTheme">
-        <description>"The main AgMIP Research page theme"</description>
+        <description>The main AgMIP Research page theme</description>
         <param name="includeClassicStyles" value="false"/>
         <resource type="download" name="agmip-research-theme.css" location="agmipresearch/css/theme.css"/>
         <resource type="download" name="agmip-research-logo.png" location="agmipresearch/images/agmip-research-logo.png"/>
         <layout key="${project.groupId}.${project.artifactId}:main"/>
         <layout key="${project.groupId}.${project.artifactId}:page"/>
         <layout key="${project.groupId}.${project.artifactId}:blogpost"/>
+    </theme>
+
+    <theme key="agmipresearchforum" name="AgMIP Research Forums Theme" class="com.atlassian.confluence.themes.BasicTheme">
+        <description>The AgMIP Research forum theme</description>
+        <param name="includeClassicStyles" value="false"/>
+        <resource type="download" name="agmip-research-theme.css" location="agmipresearch/css/theme.css"/>
+        <resource type="download" name="agmip-research-logo.png" location="agmipresearch/images/agmip-research-logo.png"/>
+        <layout key="${project.groupId}.${project.artifactId}:forum"/>
+        <layout key="${project.groupId}.${project.artifactId}:forumpage"/>
     </theme>
 
     <layout key="main" name="Main Decorator" class="com.atlassian.confluence.themes.VelocityDecorator" overrides="/decorators/main.vmd">
@@ -24,7 +33,10 @@
     <layout key="blogpost" main="Blog Decorator" class="com.atlassian.confluence.themes.VelocityDecorator" overrides="/decorators/blogpost.vmd">
         <resource type="velocity" name="decorator" location="agmipresearch/blogpost.vmd"/>
     </layout>
-
-    <!-- <macro name="bare-space-by-category">
-    </macro> -->
+    <layout key="forum" name="Main Decorator" class="com.atlassian.confluence.themes.VelocityDecorator" overrides="/decorators/main.vmd">
+        <resource type="velocity" name="decorator" location="agmipresearch/forum.vmd"/>
+    </layout>
+    <layout key="forumpage" name="Page Decorator" class="com.atlassian.confluence.themes.VelocityDecorator" overrides="/decorators/page.vmd">
+        <resource type="velocity" name="decorator" location="agmipresearch/forum-page.vmd"/>
+    </layout>
 </atlassian-plugin>
