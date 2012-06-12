@@ -67,7 +67,7 @@
         $body
         #if(! $isHome) 
             #if($page.CreatorName == $user.Name)
-                <a href="$req.ContextName/pages/editpage.action?pageId=$page.pageId">Edit Post</a>
+                <a href="$req.ContextPath/pages/editpage.action?pageId=$page.pageId">Edit Post</a>
             #end
         #end
     </div>
