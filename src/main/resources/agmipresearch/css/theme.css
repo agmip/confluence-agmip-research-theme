@@ -44,7 +44,6 @@ h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
     height: 100px;
     font-family: 'Belgrano', serif;
     color: #1a1d1e;
-    border-bottom: 3px solid #1a1d1e;
 }
 
 #header a {
@@ -52,12 +51,6 @@ h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
     text-decoration: none;
     font-size: 18px;
 }
-
-/*
-#footer {
-    margin-top: 25px;
-    border-bottom: 1px solid #bbb;
-} */
 
 #footer p.license {
     margin-top: 0;
@@ -100,6 +93,7 @@ h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
     padding-bottom: 5px;
     color: #eef6ff;
     position: relative;
+    border-bottom: 5px solid #ffcc01;
 }
 
 #agmipr-breadcrumbs a {

@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.agmip.confluence.plugins</groupId>
     <artifactId>agmip-research-theme</artifactId>
-    <version>1.2</version>
+    <version>1.2.1</version>
 
     <organization>
         <name>AgMIP</name>
