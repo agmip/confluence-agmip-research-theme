@@ -7,8 +7,7 @@
 *********************/
 
 body {
-    /* background-color: #1a1d1e; */
-    background-color: #eef6ff;
+    background-color: #fff; /* #eef6ff; */
     font-family: Arial, "MS Trebuchet", sans-serif;
     font-size: 12px;
     color: #1a1d1e;
@@ -29,10 +28,6 @@ h1, h2, h3, h4, h5, h6, .wiki-content h1, .wiki-content h2, .wiki-content h3, .w
     color: #3bb96e; !important
 }
 
-/* body, p, td, table, tr, .bodytext, .stepfield {
-    color: #e2f6ff; !important
-} */
-
 h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
     color: #3bb96e;
 }
@@ -45,7 +40,7 @@ h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
 
 #header {
     position: relative;
-    background-color: #ece7cb;
+    background-color: #fff; /* #ece7cb; */
     height: 100px;
     font-family: 'Belgrano', serif;
     color: #1a1d1e;
@@ -98,7 +93,7 @@ h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
 }
 
 #agmipr-breadcrumbs {
-    background-color: #1a1d1e;
+    background-color: #663200; /* #1a1d1e; */
     margin-top:0;
     padding-left: 25px;
     padding-top: 5px;
@@ -133,7 +128,7 @@ h1 a:link, h1 a:visited, h1 a:focus, h1 a:hover, h1 a:active {
 }
 
 #agmipr-spacesmenu {
-    background-color: #d3effa;
+    background-color: #ecebe6; /* #d3effa; */
     color: #1a1d1e;
     border-top: 1px solid #1a1d1e;
     border-bottom: 1px solid #1a1d1e;

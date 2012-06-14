@@ -20,10 +20,13 @@ $!settingsManager.globalSettings.customHtmlSettings.beforeHeadEnd
 <body #onLoadAttr() id="com-atlassian-confluence" class="$!theme.moduleKey $!sitemeshPage.getProperty("page.bodyClass")>
     <div id="page">
         <div id="full-height-container">
+            <div id="header-precursor">
+                #displayGlobalMessages()
+            </div>
             <div id="header">
                 <h1 id="agmipr-logo">AgMIP Research</h1>
                 <div id="agmipr-user-buttons">
-                    <a href="$helper.domainName">Home</a> 
+                    <a href="http://www.agmip.org/">Visit AgMIP.org</a> 
                     #if($user)
                         <a href="$req.contextPath/logout.action?destination=$generalUtil.urlEncode($pageURL)" class="agmipr-button">Logout</a>
                     #else                

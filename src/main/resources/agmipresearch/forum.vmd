@@ -33,16 +33,7 @@
                     </div>
                 </div>
                 <div id="agmipr-breadcrumbs">
-                    #set( $space = $spaceManager.getSpace($spaceKey) )
-                    #set( $parentKey = $space.getKey().substring(0, $space.getKey().indexOf("forum")))
-                    #set( $parentSpace = $spaceManager.getSpace($parentKey))
-                    #set( $parentHome = $parentSpace.getHomePage())
-                    #set( $spaceHome = $space.getHomePage() )
-                    #if( $spaceHome.getId() != $sitemeshPage.getProperty("page.pageId"))
-                        <a href="$req.ContextPath$spaceHome.getUrlPath()">&laquo; Back To $spaceHome.Title</a>
-                    #else
-                        <a href="$req.ContextPath$parentHome.getUrlPath()">$parentSpace.getName()</a> > $sitemeshPage.getProperty("page.pageTitle")
-                    #end
+                    #breadcrumbs()
                     #if($user)
                     <div id="agmipr-adminlinks">
                         #if ($user.fullName)

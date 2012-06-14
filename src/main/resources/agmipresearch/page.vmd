@@ -61,12 +61,6 @@
         $body
     </div>
 
-    #applyDecorator("root")
-        #decoratorParam("sitemeshPage" $sitemeshPage)
-        #decoratorParam("page" $page)
-        #decoratorParam("context" "comments")
-    #end
-
     #trackbackRdf ($trackbackUtils.getContentIdentifier($page) $page.title $trackbackUtils.getPingUrl($page))
 
     #parse("agmipresearch/agmipr-footer-menu.vm")
